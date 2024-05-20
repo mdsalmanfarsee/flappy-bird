@@ -104,7 +104,7 @@ function update() {
     requestAnimationFrame(update);
     if (gameOver) {
         bgMusic.pause();
-        sadMusic.currentTime = 0;
+        // sadMusic.currentTime = 0;
         sadMusic.play();
         return;
     }
