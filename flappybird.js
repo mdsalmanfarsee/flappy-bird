@@ -7,8 +7,8 @@ let boardHeight = 640;
 let context;
 
 //bird
-let birdWidth = 68; //width/height ratio = 408/228 =17/12
-let birdHeight = 48;
+let birdWidth = 32; //width/height ratio = 8/10
+let birdHeight = 40;
 let birdX = boardWidth / 8;
 let birdY = boardHeight / 2;
 let birdImg;
@@ -42,9 +42,7 @@ let score = 0;
 let bgMusic = new Audio('./music2.mp3');
 bgMusic.loop = true;
 
-//gameover music
-let sadMusic = new Audio('./sadMusic.mp3');
-sadMusic.loop = true;
+
 
 //memesound
 let meme = new Audio('./memesound.mp3');
@@ -66,21 +64,9 @@ window.onload = function () {
 
         //draw flappy bird
 
-
-        // Play background music once everything is loaded
-        bgMusic.addEventListener('canplaythrough', () => {
-            // bgMusic.currentTime = 30;
-            bgMusic.play().catch(error => {
-                console.error("Error playing music:", error);
-            });
-        });
-        bgMusic.load();   // Load the music to ensure it can play
-        sadMusic.load();
-        meme.load();
-
         //load images
         birdImg = new Image();
-        birdImg.src = './farhan.png';
+        birdImg.src = './salman.png';
         birdImg.onload = function () {
 
             context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
@@ -90,6 +76,20 @@ window.onload = function () {
         topPipeImg.src = './toppipe.png';
         bottomPipeImg = new Image();
         bottomPipeImg.src = './bottompipe.png';
+
+
+        // Play background music once everything is loaded
+        bgMusic.addEventListener('canplaythrough', () => {
+            // bgMusic.currentTime = 30;
+            bgMusic.play().catch(error => {
+                console.error("Error playing music:", error);
+            });
+        });
+        bgMusic.load();   // Load the music to ensure it can play
+        // sadMusic.load();
+        meme.load();
+
+
 
         requestAnimationFrame(update);
 
