@@ -46,6 +46,10 @@ bgMusic.loop = true;
 let sadMusic = new Audio('./sadMusic.mp3');
 sadMusic.loop = true;
 
+//memesound
+let meme = new Audio('./memesound.mp3');
+meme.loop = true;
+
 
 window.onload = function () {
     board = document.getElementById("board");
@@ -72,7 +76,7 @@ window.onload = function () {
         });
         bgMusic.load();   // Load the music to ensure it can play
         sadMusic.load();
-
+        meme.load();
 
         //load images
         birdImg = new Image();
@@ -105,10 +109,12 @@ function update() {
     if (gameOver) {
         bgMusic.pause();
         // sadMusic.currentTime = 0;
-        sadMusic.play();
+        // sadMusic.play();
+        meme.play();
         return;
     }
-    sadMusic.pause();
+    // sadMusic.pause();
+    meme.pause();
     context.clearRect(0, 0, board.width, board.height);
 
     //bird
